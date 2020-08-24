@@ -44,7 +44,7 @@ const SleepForm =(props)=>{
                     value={values.start}
                     onChange={onInputChange}
                     name='start'
-                    type='text'
+                    type='time'
                     />
                 </label>
                 <label>T.O.D
@@ -61,8 +61,8 @@ const SleepForm =(props)=>{
                     <input
                     value={values.stop}
                     onChange={onInputChange}
-                    name='name'
-                    type='text'
+                    name='stop'
+                    type='time'
                     />
                 </label>
                 <label>T.O.D
