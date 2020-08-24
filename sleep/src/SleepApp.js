@@ -12,7 +12,7 @@ const initialFormValues={
     start:'',
     stop:'',
     slept: '',
-}
+};
 
 const initialFormErrors ={
     name:'',
@@ -20,7 +20,7 @@ const initialFormErrors ={
     start:'',
     stop:'',
     slept: '',
-}
+};
 
 const initialSleep=[]
 const initialDisabled = true
@@ -30,7 +30,7 @@ const App = () => {
     const[formErrors, setFormErrors]=useState(initialFormErrors)
     const[disabled, setDisabled]=useState(initialDisabled)
     const[sleep,setSleep]=useState(initialSleep)
-}
+
 useEffect(()=>{
     const getSleep = ()=>{
         axios.get('https://my-sleep-tracker.herokuapp.com/api/users')
@@ -121,4 +121,4 @@ const inputChange=(name,value)=>{
             </div>
     );
 }
-export default App;
+export default SleepApp;
