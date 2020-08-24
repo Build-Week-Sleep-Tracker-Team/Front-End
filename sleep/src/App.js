@@ -2,6 +2,7 @@ import React from 'react';
 import{Route, Link} from 'react-router-dom'
 import './App.css';
 import SleepApp from './SleepApp'
+import Sleep from './components/Sleep'
 
 const App = () => {
   return (
