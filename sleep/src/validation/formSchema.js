@@ -10,7 +10,12 @@ const formSchema = yup.object().shape({
     .min(5, "must be at least 5 characters in length")
     .required('must enter a password'),
 
-    Sleepstart:yup
+ mood:yup
+ .string()
+ .min(3,"must be at least 3 characters in length")
+ .required('must feel a type of way'),
+
+    start:yup
     .string()
     .min(4,'must be at least 4 characters in length')
     .required('enter a start time'),
@@ -18,7 +23,7 @@ const formSchema = yup.object().shape({
     stop:yup
     .string()
     .min(4,'must be at least 4 characters in length')
-    .required('example 3:00'),
+    .required('enter a time'),
 })
 
 export default formSchema

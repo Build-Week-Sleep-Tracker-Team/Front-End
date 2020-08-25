@@ -15,18 +15,15 @@ const initialFormValues={
 
 
 const initialFormErrors ={
-    username:'',
-    password:'',
+    mood:'',
     sleepStart:'',
     sleepEnd:'',
-    mood:'',
 };
 
 const initialSleep=[]
 const initialDisabled = true
 
 const App = () => {
-    
     const [formValues, setFormValues]=useState(initialFormValues)
     const[formErrors, setFormErrors]=useState(initialFormErrors)
     const[disabled, setDisabled]=useState(initialDisabled)
