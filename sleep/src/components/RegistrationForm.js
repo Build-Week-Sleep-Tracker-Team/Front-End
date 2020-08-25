@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const RegistrationForm=(props)=>{
+
+ const RegistrationForm=(props)=>{
     const{
         values,
         submit,
@@ -15,7 +16,7 @@ const RegistrationForm=(props)=>{
         const {name, value} = evt.target
         inputChange(name, value)
     }
-debugger
+
     return( 
         <form className= 'reg form container' onSubmit={onSubmit}>
             <div className='reg form inputs'>
@@ -30,21 +31,12 @@ debugger
                     />
                 </label>
                 <label>
-                    Email:&nbsp;
-                    <input
-                    value={values.email}
-                    onChange={onInputChange}
-                    name='email'
-                    type='email'
-                    />
-                </label>
-                <label>
                     Password:&nbsp;
                     <input
                     value={values.password}
                     onChange={onInputChange}
                     name='password'
-                    type='password'
+                    type='text'
                     />
                 </label>
                 <button>Submit</button>
@@ -52,4 +44,5 @@ debugger
             </form>
     )
 }
+
 export default RegistrationForm;

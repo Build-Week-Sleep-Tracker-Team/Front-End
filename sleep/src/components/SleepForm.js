@@ -23,10 +23,10 @@ const SleepForm =(props)=>{
                 <label>
                     Mood:&nbsp;
                     <input
-                    value={values.name}
+                    value={values.mood}
                     onChange={onInputChange}
                     name='mood'
-                    type='text'
+                    type='integer'
                     />
                 </label>
                 <label>

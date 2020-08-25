@@ -22,7 +22,7 @@ console.log(props)
                 <h3>Login</h3>
         <label>Username:&nbsp;
         <input
-        value={values.name}
+        value={values.username}
         onChange={onInputChange}
         name='username'
         type='text'
@@ -33,7 +33,7 @@ console.log(props)
         value={values.password}
         onChange={onInputChange}
         name='password'
-        type='password'
+        type='text'
         />
     </label>
     <button>Login</button>
@@ -41,4 +41,5 @@ console.log(props)
         </form>
     )
 }
+
 export default LoginForm;

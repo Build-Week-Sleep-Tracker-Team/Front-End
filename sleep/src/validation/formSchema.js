@@ -1,18 +1,19 @@
 import *as yup from 'yup'
 const formSchema = yup.object().shape({
-    name:yup
+    username:yup
     .string()
-    .min(2, 'must be at least 2 characters in length'),
+    .min(2, 'must be at least 2 characters in length')
+    .required('you must enter a username'),
 
-    date:yup
+    password:yup
     .string()
-    .min(10, "must be at least 10 characters in length")
-    .required('format xx/xx/xxxx'),
+    .min(5, "must be at least 5 characters in length")
+    .required('must enter a password'),
 
-    start:yup
+    Sleepstart:yup
     .string()
     .min(4,'must be at least 4 characters in length')
-    .required('example 3:00'),
+    .required('enter a start time'),
 
     stop:yup
     .string()
