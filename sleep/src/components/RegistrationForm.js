@@ -1,11 +1,12 @@
 import React from 'react'
 
-const ResgistrationForm=(props)=>{
+const RegistrationForm=(props)=>{
     const{
         values,
         submit,
         inputChange,
     }=props
+
     const onSubmit =evt=>{
         evt.preventDefault()
         submit()
@@ -14,7 +15,7 @@ const ResgistrationForm=(props)=>{
         const {name, value} = evt.target
         inputChange(name, value)
     }
-
+debugger
     return( 
         <form className= 'reg form container' onSubmit={onSubmit}>
             <div className='reg form inputs'>
@@ -51,4 +52,4 @@ const ResgistrationForm=(props)=>{
             </form>
     )
 }
-export default ResgistrationForm;
+export default RegistrationForm;

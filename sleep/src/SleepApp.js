@@ -5,6 +5,8 @@ import './App.css';
 import Sleep from './components/Sleep';
 import SleepForm from './components/SleepForm';
 import formSchema from './validation/formSchema';
+import LoginForm from './components/LoginForm';
+import RegistrationForm from './components/RegistrationForm';
 
 const initialFormValues={
     name:'',
@@ -32,24 +34,23 @@ const App = () => {
     const[sleep,setSleep]=useState(initialSleep)
 
     useEffect(()=>{
-    const getSleep = ()=>{
-        axios.get('https://my-sleep-tracker.herokuapp.com/api/users')
+    axios.get('https://my-sleep-tracker.herokuapp.com/api/users')
         .then(res=>{
             setSleep(res.data);
         })
         .catch(err=>{
-            console.log(err)
+            debugger
         });
-    }
-    getSleep();},[])
+    },[])
+   
 
 const postNewSleep = newSleep=>{
-    axios.post('https://my-sleep-tracker.herokuapp.com/api/users',newSleep)
+    axios.post('https://my-sleep-tracker.herokuapp.com/api/users', newSleep)
     .then(res=>{
         setSleep([...sleep, res.data])
     })
     .catch(err=>{
-        console.log(err)
+        debugger
     })
     .finally(()=>{
         setFormValues(initialFormValues)
@@ -79,10 +80,8 @@ const postNewSleep = newSleep=>{
         const submit = () =>{
             const newSleep = {
                 Name: formValues.name,
-                Date: formValues.date,
-                Start: formValues.start,
-                Stop: formValues.stop,
-                Slept: formValues.slept,
+                Start: formValues.sleepStart,
+                Stop: formValues.sleepStop,
             }
             postNewSleep(newSleep)
         }
@@ -103,6 +102,20 @@ const postNewSleep = newSleep=>{
                     <header>
                         <h1>Sleep</h1>
                     </header>
+                    <LoginForm
+                    values={formValues}
+                    inputChange={inputChange}
+                    submit={submit}
+                    disabled={disabled}
+                    errors={formErrors}
+                    />
+                    <RegistrationForm
+                    values={formValues}
+                    inputChange={inputChange}
+                    submit={submit}
+                    disabled={disabled}
+                    errors={formErrors}
+                    />
                     
                     <SleepForm
                     values={formValues}

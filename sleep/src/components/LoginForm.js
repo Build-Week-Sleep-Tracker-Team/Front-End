@@ -1,12 +1,13 @@
 import React from 'react'
 
-const LoginForm =(props) =>{
+const LoginForm = (props) =>{
+    console.log(props)
     const{
         values,
         submit,
         inputChange,
     }= props
-
+console.log(props)
     const onSubmit = evt=>{
         evt.preventDefault()
         submit()
@@ -19,9 +20,9 @@ const LoginForm =(props) =>{
         <form className= 'top form container' onSubmit={onSubmit}>
             <div className='top form inputs'>
                 <h3>Login</h3>
-                <label>Username:&nbsp;
+        <label>Username:&nbsp;
         <input
-        value={values.username}
+        value={values.name}
         onChange={onInputChange}
         name='username'
         type='text'
@@ -35,7 +36,7 @@ const LoginForm =(props) =>{
         type='password'
         />
     </label>
-    <button>Submit</button>
+    <button>Login</button>
             </div>
         </form>
     )
