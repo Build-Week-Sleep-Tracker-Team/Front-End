@@ -14,7 +14,6 @@ function Login({details}){
         <StyledLogin>
             <h2>Username: </h2>
             <p>password: </p>
-            
         </StyledLogin>
     );
 }
